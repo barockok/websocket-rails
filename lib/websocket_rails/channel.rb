@@ -32,7 +32,7 @@ module WebsocketRails
     end
 
     def trigger_event(event)
-      info "(processing_channel_event) name: #{event.name} namespace: #{event.namespace} connection: #{event.connection.id}"
+      info "(processing_channel_event) name: #{event.name} namespace: #{event.namespace} connection: #{event.connection.nil?  ? event.connection : event.connection.id}"
       send_data event
     end
 
